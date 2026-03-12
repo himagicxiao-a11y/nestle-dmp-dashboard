@@ -948,16 +948,14 @@ function openEditor() {
   EDITABLE_ROWS.forEach(row => {
     const div = document.createElement('div');
     div.style.cssText = 'background:#f8fafc;border-radius:8px;padding:10px 12px;display:grid;grid-template-columns:1fr 100px 80px;gap:8px;align-items:center;';
-    div.innerHTML = \`
-      <div style="font-size:13px;font-weight:600;color:#1e293b;">\${row.label}</div>
-      <input data-key="\${row.key}-consumed" type="number" value="\${row.consumed||''}" placeholder="已消耗" style="padding:6px 8px;border:1px solid #d1d5db;border-radius:6px;font-size:13px;width:100%;" />
-      <select data-key="\${row.key}-status" style="padding:6px 8px;border:1px solid #d1d5db;border-radius:6px;font-size:12px;width:100%;">
-        <option value="doing" \${row.status==='doing'?'selected':''}>执行中</option>
-        <option value="done" \${row.status==='done'?'selected':''}>已完成</option>
-        <option value="none" \${row.status==='none'?'selected':''}>未执行</option>
-        <option value="pending" \${row.status==='pending'?'selected':''}>待结算</option>
-      </select>
-    \`;
+    div.innerHTML = '<div style="font-size:13px;font-weight:600;color:#1e293b;">'+row.label+'</div>'
+      + '<input data-key="'+row.key+'-consumed" type="number" value="'+(row.consumed||'')+'" placeholder="已消耗" style="padding:6px 8px;border:1px solid #d1d5db;border-radius:6px;font-size:13px;width:100%;" />'
+      + '<select data-key="'+row.key+'-status" style="padding:6px 8px;border:1px solid #d1d5db;border-radius:6px;font-size:12px;width:100%;">'
+      + '<option value="doing"'+(row.status==='doing'?' selected':'')+'>执行中</option>'
+      + '<option value="done"'+(row.status==='done'?' selected':'')+'>已完成</option>'
+      + '<option value="none"'+(row.status==='none'?' selected':'')+'>未执行</option>'
+      + '<option value="pending"'+(row.status==='pending'?' selected':'')+'>待结算</option>'
+      + '</select>';
     container.appendChild(div);
   });
 
