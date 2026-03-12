@@ -351,28 +351,28 @@ tbody tr:hover td { background: #f8faff; }
     <div class="kpi-card blue">
       <div class="kpi-icon">💰</div>
       <div class="kpi-label">整体已消耗</div>
-      <div class="kpi-value">59.5<span>万元</span></div>
+      <div class="kpi-value" id="kv-total">59.5<span>万元</span></div>
       <div class="kpi-sub-text">合同内 + 合同外合计</div>
       <div class="kpi-badge badge-blue">含待入账项</div>
     </div>
     <div class="kpi-card green">
       <div class="kpi-icon">📋</div>
       <div class="kpi-label">合同内已消耗</div>
-      <div class="kpi-value">51.7<span>万元</span></div>
+      <div class="kpi-value" id="kv-in">51.7<span>万元</span></div>
       <div class="kpi-sub-text">合同总预算 184.8万</div>
       <div class="kpi-badge badge-green">消耗率 28%</div>
     </div>
     <div class="kpi-card orange">
       <div class="kpi-icon">📤</div>
       <div class="kpi-label">合同外已消耗</div>
-      <div class="kpi-value">7.8<span>万元</span></div>
+      <div class="kpi-value" id="kv-out">7.8<span>万元</span></div>
       <div class="kpi-sub-text">专家咨询 + 运营支持</div>
       <div class="kpi-badge badge-orange">持续计费中</div>
     </div>
     <div class="kpi-card red">
       <div class="kpi-icon">⚠️</div>
       <div class="kpi-label">待入账金额</div>
-      <div class="kpi-value">18.2<span>万元</span></div>
+      <div class="kpi-value" id="kv-pending">18.2<span>万元</span></div>
       <div class="kpi-sub-text">ID转译455万条未结算</div>
       <div class="kpi-badge badge-red">需跟进结算</div>
     </div>
@@ -407,7 +407,7 @@ tbody tr:hover td { background: #f8faff; }
         <div class="mobile-row">
           <div class="mobile-row-header">
             <div class="mobile-row-title">DMP产品平台搭建</div>
-            <span class="status-badge s-doing">🔄 执行中</span>
+            <span class="status-badge s-doing" data-status-key="dmp">🔄 执行中</span>
           </div>
           <div class="mobile-row-meta">
             <div class="meta-item"><span class="meta-label">类别</span><span class="meta-val">合同内</span></div>
@@ -415,13 +415,13 @@ tbody tr:hover td { background: #f8faff; }
             <div class="meta-item"><span class="meta-label">已消耗</span><span class="meta-val">36,367元</span></div>
             <div class="meta-item"><span class="meta-label">备注</span><span class="meta-val">已消耗1-2月</span></div>
           </div>
-          <div class="prog-wrap"><div class="prog-bar"><div class="prog-fill" style="width:16.7%"></div></div><span class="prog-pct">16.7%</span></div>
+          <div class="prog-wrap"><div class="prog-bar"><div class="prog-fill" style="width:16.7%" data-prog-key="dmp"></div></div><span class="prog-pct" data-progpct-key="dmp">16.7%</span></div>
         </div>
 
         <div class="mobile-row">
           <div class="mobile-row-header">
             <div class="mobile-row-title">业务调研及需求设计</div>
-            <span class="status-badge s-done">✅ 已完成</span>
+            <span class="status-badge s-done" data-status-key="survey">✅ 已完成</span>
           </div>
           <div class="mobile-row-meta">
             <div class="meta-item"><span class="meta-label">类别</span><span class="meta-val">合同内</span></div>
@@ -435,7 +435,7 @@ tbody tr:hover td { background: #f8faff; }
         <div class="mobile-row">
           <div class="mobile-row-header">
             <div class="mobile-row-title">Retargeting人群推送</div>
-            <span class="status-badge s-doing">🔄 执行中</span>
+            <span class="status-badge s-doing" data-status-key="retarg">🔄 执行中</span>
           </div>
           <div class="mobile-row-meta">
             <div class="meta-item"><span class="meta-label">类别</span><span class="meta-val">合同内</span></div>
@@ -449,7 +449,7 @@ tbody tr:hover td { background: #f8faff; }
         <div class="mobile-row">
           <div class="mobile-row-header">
             <div class="mobile-row-title">电商效果评估（MET分析）</div>
-            <span class="status-badge s-doing">🔄 执行中</span>
+            <span class="status-badge s-doing" data-status-key="met">🔄 执行中</span>
           </div>
           <div class="mobile-row-meta">
             <div class="meta-item"><span class="meta-label">类别</span><span class="meta-val">合同内</span></div>
@@ -463,7 +463,7 @@ tbody tr:hover td { background: #f8faff; }
         <div class="mobile-row">
           <div class="mobile-row-header">
             <div class="mobile-row-title">安全岛开通</div>
-            <span class="status-badge s-done">✅ 已完成</span>
+            <span class="status-badge s-done" data-status-key="island">✅ 已完成</span>
           </div>
           <div class="mobile-row-meta">
             <div class="meta-item"><span class="meta-label">类别</span><span class="meta-val">合同内</span></div>
@@ -477,7 +477,7 @@ tbody tr:hover td { background: #f8faff; }
         <div class="mobile-row">
           <div class="mobile-row-header">
             <div class="mobile-row-title">高潜人群建模投放</div>
-            <span class="status-badge s-doing">🔄 执行中</span>
+            <span class="status-badge s-doing" data-status-key="lookai">🔄 执行中</span>
           </div>
           <div class="mobile-row-meta">
             <div class="meta-item"><span class="meta-label">类别</span><span class="meta-val">合同内</span></div>
@@ -485,13 +485,13 @@ tbody tr:hover td { background: #f8faff; }
             <div class="meta-item"><span class="meta-label">已消耗</span><span class="meta-val">60,000元</span></div>
             <div class="meta-item"><span class="meta-label">备注</span><span class="meta-val">已执行2次</span></div>
           </div>
-          <div class="prog-wrap"><div class="prog-bar"><div class="prog-fill" style="width:13.3%"></div></div><span class="prog-pct">13.3%</span></div>
+          <div class="prog-wrap"><div class="prog-bar"><div class="prog-fill" style="width:13.3%" data-prog-key="lookai"></div></div><span class="prog-pct" data-progpct-key="lookai">13.3%</span></div>
         </div>
 
         <div class="mobile-row">
           <div class="mobile-row-header">
             <div class="mobile-row-title">MTA分析</div>
-            <span class="status-badge s-none">未执行</span>
+            <span class="status-badge s-none" data-status-key="mta">未执行</span>
           </div>
           <div class="mobile-row-meta">
             <div class="meta-item"><span class="meta-label">类别</span><span class="meta-val">合同内</span></div>
@@ -505,7 +505,7 @@ tbody tr:hover td { background: #f8faff; }
         <div class="mobile-row">
           <div class="mobile-row-header">
             <div class="mobile-row-title">运营商数据</div>
-            <span class="status-badge s-none">未执行</span>
+            <span class="status-badge s-none" data-status-key="telco">未执行</span>
           </div>
           <div class="mobile-row-meta">
             <div class="meta-item"><span class="meta-label">类别</span><span class="meta-val">合同内</span></div>
@@ -519,7 +519,7 @@ tbody tr:hover td { background: #f8faff; }
         <div class="mobile-row">
           <div class="mobile-row-header">
             <div class="mobile-row-title">ID Mapping转译（MAC/BDID→DID）</div>
-            <span class="status-badge s-pending">⚠️ 待结算</span>
+            <span class="status-badge s-pending" data-status-key="idmap">⚠️ 待结算</span>
           </div>
           <div class="mobile-row-meta">
             <div class="meta-item"><span class="meta-label">类别</span><span class="meta-val">合同内</span></div>
@@ -597,15 +597,15 @@ tbody tr:hover td { background: #f8faff; }
         <table>
           <thead><tr><th>类别</th><th>服务项目</th><th>合同预算（元）</th><th>已消耗（元）</th><th>消耗进度</th><th>执行状态</th><th>备注/风险提示</th></tr></thead>
           <tbody>
-            <tr><td>合同内</td><td>DMP产品平台搭建</td><td>218,200</td><td>36,367</td><td><div class="prog-wrap"><div class="prog-bar"><div class="prog-fill" style="width:16.7%"></div></div><span class="prog-pct">16.7%</span></div></td><td><span class="status-badge s-doing">🔄 执行中</span></td><td>已消耗1-2月，全年进度16.7%</td></tr>
-            <tr><td>合同内</td><td>业务调研及需求设计</td><td>60,000</td><td>60,000</td><td><div class="prog-wrap"><div class="prog-bar"><div class="prog-fill" style="width:100%;background:linear-gradient(90deg,#22c55e,#4ade80)"></div></div><span class="prog-pct">100%</span></div></td><td><span class="status-badge s-done">✅ 已完成</span></td><td>一次性调研已完成</td></tr>
-            <tr><td>合同内</td><td>Retargeting人群推送</td><td>240,000</td><td>209,790</td><td><div class="prog-wrap"><div class="prog-bar"><div class="prog-fill" style="width:87.4%;background:linear-gradient(90deg,#f59e0b,#fbbf24)"></div></div><span class="prog-pct">87.4%</span></div></td><td><span class="status-badge s-doing">🔄 执行中</span></td><td>多个NIN/Coffee/Yiyang执行中</td></tr>
+            <tr><td>合同内</td><td>DMP产品平台搭建</td><td>218,200</td><td data-consumed-key="dmp">36,367</td><td><div class="prog-wrap"><div class="prog-bar"><div class="prog-fill" style="width:16.7%"></div></div><span class="prog-pct">16.7%</span></div></td><td><span class="status-badge s-doing">🔄 执行中</span></td><td>已消耗1-2月，全年进度16.7%</td></tr>
+            <tr><td>合同内</td><td>业务调研及需求设计</td><td data-consumed-key="survey">60,000</td><td data-consumed-key="lookai">60,000</td><td><div class="prog-wrap"><div class="prog-bar"><div class="prog-fill" style="width:100%;background:linear-gradient(90deg,#22c55e,#4ade80)"></div></div><span class="prog-pct">100%</span></div></td><td><span class="status-badge s-done">✅ 已完成</span></td><td>一次性调研已完成</td></tr>
+            <tr><td>合同内</td><td>Retargeting人群推送</td><td>240,000</td><td data-consumed-key="retarg">209,790</td><td><div class="prog-wrap"><div class="prog-bar"><div class="prog-fill" style="width:87.4%;background:linear-gradient(90deg,#f59e0b,#fbbf24)"></div></div><span class="prog-pct">87.4%</span></div></td><td><span class="status-badge s-doing">🔄 执行中</span></td><td>多个NIN/Coffee/Yiyang执行中</td></tr>
             <tr><td>合同内</td><td>电商效果评估（MET分析）</td><td>240,000</td><td class="warn">—</td><td><div class="prog-wrap"><div class="prog-bar"><div class="prog-fill" style="width:0%"></div></div><span class="prog-pct">待确认</span></div></td><td><span class="status-badge s-doing">🔄 执行中</span></td><td class="warn">⚠️ 计费逻辑确认中</td></tr>
-            <tr><td>合同内</td><td>安全岛开通</td><td>100,000</td><td>100,000</td><td><div class="prog-wrap"><div class="prog-bar"><div class="prog-fill" style="width:100%;background:linear-gradient(90deg,#22c55e,#4ade80)"></div></div><span class="prog-pct">100%</span></div></td><td><span class="status-badge s-done">✅ 已完成</span></td><td>一次性费用</td></tr>
+            <tr><td>合同内</td><td>安全岛开通</td><td data-consumed-key="island">100,000</td><td>100,000</td><td><div class="prog-wrap"><div class="prog-bar"><div class="prog-fill" style="width:100%;background:linear-gradient(90deg,#22c55e,#4ade80)"></div></div><span class="prog-pct">100%</span></div></td><td><span class="status-badge s-done">✅ 已完成</span></td><td>一次性费用</td></tr>
             <tr><td>合同内</td><td>高潜人群建模投放</td><td>450,000</td><td>60,000</td><td><div class="prog-wrap"><div class="prog-bar"><div class="prog-fill" style="width:13.3%"></div></div><span class="prog-pct">13.3%</span></div></td><td><span class="status-badge s-doing">🔄 执行中</span></td><td>已执行2次</td></tr>
-            <tr><td>合同内</td><td>MTA分析</td><td>360,000</td><td>—</td><td><div class="prog-wrap"><div class="prog-bar"><div class="prog-fill" style="width:0%"></div></div><span class="prog-pct">0%</span></div></td><td><span class="status-badge s-none">未执行</span></td><td>—</td></tr>
-            <tr><td>合同内</td><td>运营商数据</td><td>30,000</td><td>—</td><td><div class="prog-wrap"><div class="prog-bar"><div class="prog-fill" style="width:0%"></div></div><span class="prog-pct">0%</span></div></td><td><span class="status-badge s-none">未执行</span></td><td>—</td></tr>
-            <tr><td>合同内</td><td>ID Mapping转译</td><td>400,000</td><td class="warn">182,186</td><td><div class="prog-wrap"><div class="prog-bar"><div class="prog-fill" style="width:45.5%;background:linear-gradient(90deg,#ef4444,#f87171)"></div></div><span class="prog-pct">45.5%</span></div></td><td><span class="status-badge s-pending">⚠️ 待结算</span></td><td class="warn">⚠️ 18.2万尚未入账</td></tr>
+            <tr><td>合同内</td><td>MTA分析</td><td>360,000</td><td data-consumed-key="met">—</td><td><div class="prog-wrap"><div class="prog-bar"><div class="prog-fill" style="width:0%"></div></div><span class="prog-pct">0%</span></div></td><td><span class="status-badge s-none">未执行</span></td><td data-consumed-key="mta">—</td></tr>
+            <tr><td>合同内</td><td>运营商数据</td><td>30,000</td><td data-consumed-key="telco">—</td><td><div class="prog-wrap"><div class="prog-bar"><div class="prog-fill" style="width:0%"></div></div><span class="prog-pct">0%</span></div></td><td><span class="status-badge s-none">未执行</span></td><td>—</td></tr>
+            <tr><td>合同内</td><td>ID Mapping转译</td><td>400,000</td><td class="warn" data-consumed-key="idmap">182,186</td><td><div class="prog-wrap"><div class="prog-bar"><div class="prog-fill" style="width:45.5%;background:linear-gradient(90deg,#ef4444,#f87171)"></div></div><span class="prog-pct">45.5%</span></div></td><td><span class="status-badge s-pending">⚠️ 待结算</span></td><td class="warn">⚠️ 18.2万尚未入账</td></tr>
             <tr style="background:#fffdf5;"><td>合同外</td><td>SSO接口开发对接</td><td>—</td><td>—</td><td>—</td><td><span class="status-badge s-doing">🔄 执行中</span></td><td>预计10人天，接口对接中</td></tr>
             <tr style="background:#fffdf5;"><td>合同外</td><td>ID量统计（跑数+看板开发）</td><td>—</td><td>—</td><td>—</td><td><span class="status-badge s-doing">🔄 执行中</span></td><td>预计全年9+27人天</td></tr>
             <tr style="background:#fff8ed;"><td rowspan="5">合同外</td><td>专家咨询 · 集团VP支持</td><td>—</td><td>12,000</td><td>—</td><td><span class="status-badge s-doing">🔄 执行中</span></td><td>2人天/月 × 2月</td></tr>
@@ -971,57 +971,122 @@ function handleXlsxUpload(input) {
   input.value = '';
 }
 
+function applyEditorToDOM(total, inVal, outVal, pending, cutoff, rows) {
+  // 更新 KPI 卡片
+  document.getElementById('kv-total').innerHTML = total.toFixed(1) + '<span>万元</span>';
+  document.getElementById('kv-in').innerHTML = inVal.toFixed(1) + '<span>万元</span>';
+  document.getElementById('kv-out').innerHTML = outVal.toFixed(1) + '<span>万元</span>';
+  document.getElementById('kv-pending').innerHTML = pending.toFixed(1) + '<span>万元</span>';
+
+  // 更新截止日期
+  const dateEl = document.querySelector('.header-date');
+  if (dateEl) {
+    const d = new Date(cutoff);
+    const mo = d.getMonth() + 1;
+    const day = d.getDate();
+    dateEl.textContent = mo + '月' + day + '日';
+  }
+  document.querySelectorAll('[data-cutoff-display]').forEach(el => el.textContent = cutoff);
+
+  // 更新合同内进度卡（消耗率/进度条等）
+  const inRatePct = ((inVal * 10000) / 1848200 * 100).toFixed(1);
+  const kpiGreenBadge = document.querySelectorAll('.kpi-badge')[1];
+  if (kpiGreenBadge) kpiGreenBadge.textContent = '消耗率 ' + Math.round(inVal * 10000 / 1848200 * 100) + '%';
+
+  // 更新桌面表格行
+  rows.forEach(row => {
+    const consumedEl = document.querySelector('[data-consumed-key="' + row.key + '"]');
+    if (consumedEl && row.consumed) {
+      consumedEl.textContent = row.consumed.toLocaleString('zh-CN');
+    } else if (consumedEl) {
+      consumedEl.textContent = '—';
+    }
+    const statusEl = document.querySelector('[data-status-key="' + row.key + '"]');
+    if (statusEl) {
+      const statusMap = {doing: '🔄 执行中', done: '✅ 已完成', none: '未执行', pending: '⚠️ 待结算'};
+      statusEl.className = 'status-badge s-' + row.status;
+      statusEl.textContent = statusMap[row.status] || row.status;
+    }
+  });
+
+  // 更新消耗进度条
+  rows.forEach(row => {
+    const progEl = document.querySelector('[data-prog-key="' + row.key + '"]');
+    const progPctEl = document.querySelector('[data-progpct-key="' + row.key + '"]');
+    if (progEl && row.budget && row.consumed) {
+      const pct = Math.min(100, (row.consumed / row.budget * 100)).toFixed(1);
+      progEl.style.width = pct + '%';
+      if (progPctEl) progPctEl.textContent = pct + '%';
+    }
+  });
+}
+
 async function saveAndDeploy() {
   const btn = document.getElementById('save-btn');
   const status = document.getElementById('save-status');
   btn.disabled = true; btn.textContent = '⏳ 发布中...';
   status.style.color = '#6b7280'; status.textContent = '正在提交到 GitHub...';
 
+  // 收集表单数据
+  const total = parseFloat(document.getElementById('e-total').value) || 0;
+  const inVal = parseFloat(document.getElementById('e-in').value) || 0;
+  const outVal = parseFloat(document.getElementById('e-out').value) || 0;
+  const pending = parseFloat(document.getElementById('e-pending').value) || 0;
+  const cutoff = document.getElementById('e-date').value;
+  const rows = EDITABLE_ROWS.map(row => ({
+    ...row,
+    consumed: parseInt(document.querySelector('[data-key="' + row.key + '-consumed"]')?.value) || row.consumed,
+    status: document.querySelector('[data-key="' + row.key + '-status"]')?.value || row.status
+  }));
+
+  // ① 立刻更新本地 DOM（用户立刻看到变化）
+  applyEditorToDOM(total, inVal, outVal, pending, cutoff, rows);
+  closeEditor();
+  status.textContent = '';
+
+  // ② 异步推送到 GitHub
   try {
-    // 获取当前文件 SHA
     const metaResp = await fetch(`https://api.github.com/repos/${GH_REPO}/contents/${GH_FILE}`, {
       headers: { Authorization: `token ${GH_TOKEN}`, Accept: 'application/vnd.github.v3+json' }
     });
     const meta = await metaResp.json();
     const sha = meta.sha;
 
-    // 读取当前页面 HTML，更新关键数据
-    let currentHtml = document.documentElement.outerHTML;
+    // 解码原始 HTML
+    let srcHtml = decodeURIComponent(escape(atob(meta.content.replace(/\n/g, ''))));
 
-    // 更新 KPI 数值
-    const total = parseFloat(document.getElementById('e-total').value);
-    const inVal = parseFloat(document.getElementById('e-in').value);
-    const outVal = parseFloat(document.getElementById('e-out').value);
-    const pending = parseFloat(document.getElementById('e-pending').value);
-    const cutoff = document.getElementById('e-date').value;
+    // 替换 KPI 值
+    srcHtml = srcHtml
+      .replace(/(id="kv-total">)[\d.]+(<span>万元)/, (m, a, b) => `${a}${total.toFixed(1)}${b}`)
+      .replace(/(id="kv-in">)[\d.]+(<span>万元)/, (m, a, b) => `${a}${inVal.toFixed(1)}${b}`)
+      .replace(/(id="kv-out">)[\d.]+(<span>万元)/, (m, a, b) => `${a}${outVal.toFixed(1)}${b}`)
+      .replace(/(id="kv-pending">)[\d.]+(<span>万元)/, (m, a, b) => `${a}${pending.toFixed(1)}${b}`);
 
-    // 替换 KPI 显示值（精确替换 span 内容）
-    currentHtml = currentHtml
-      .replace(/(id="kpi-total"[^>]*>)[\s\S]*?(<\/span>)/, (m, a, b) => `${a}${total.toFixed(1)}万${b}`)
-      .replace(/(id="kpi-in"[^>]*>)[\s\S]*?(<\/span>)/, (m, a, b) => `${a}${inVal.toFixed(1)}万${b}`)
-      .replace(/(id="kpi-out"[^>]*>)[\s\S]*?(<\/span>)/, (m, a, b) => `${a}${outVal.toFixed(1)}万${b}`)
-      .replace(/(id="kpi-pending"[^>]*>)[\s\S]*?(<\/span>)/, (m, a, b) => `${a}${pending.toFixed(1)}万${b}`);
+    // 替换截止日期
+    const dateForHeader = (() => { const d = new Date(cutoff); return (d.getMonth()+1) + '月' + d.getDate() + '日'; })();
+    srcHtml = srcHtml.replace(/(class="header-date-label"[^>]*><strong[^>]*>截止)[^<]*(月[^<]+日)(<\/strong>)/, (m, a, b2, c) => `${a}${dateForHeader.split('月')[0]}月${dateForHeader.split('月')[1]}${c}`);
+
+    // 替换 openEditor 里的默认值（让下次打开编辑器时显示最新值）
+    srcHtml = srcHtml
+      .replace(/(document\.getElementById\('e-total'\)\.value = )[\d./()toFixed1, ]+;/, `$1(${(total*10000).toFixed(0)}/10000).toFixed(1);`)
+      .replace(/(document\.getElementById\('e-in'\)\.value = )[\d./()toFixed1, ]+;/, `$1(${(inVal*10000).toFixed(0)}/10000).toFixed(1);`)
+      .replace(/(document\.getElementById\('e-out'\)\.value = )[\d./()toFixed1, ]+;/, `$1(${(outVal*10000).toFixed(0)}/10000).toFixed(1);`)
+      .replace(/(document\.getElementById\('e-pending'\)\.value = )[\d./()toFixed1, ]+;/, `$1(${(pending*10000).toFixed(0)}/10000).toFixed(1);`);
 
     // 提交到 GitHub
-    const content = btoa(unescape(encodeURIComponent(currentHtml)));
+    const content = btoa(unescape(encodeURIComponent(srcHtml)));
     const pushResp = await fetch(`https://api.github.com/repos/${GH_REPO}/contents/${GH_FILE}`, {
       method: 'PUT',
       headers: { Authorization: `token ${GH_TOKEN}`, Accept: 'application/vnd.github.v3+json', 'Content-Type': 'application/json' },
       body: JSON.stringify({ message: '📊 更新看板数据 via editor', content, sha })
     });
 
-    if (pushResp.ok) {
-      status.style.color = '#16a34a';
-      status.textContent = '✅ 发布成功！约1分钟后所有访问者可见新数据';
-      setTimeout(() => closeEditor(), 2000);
-    } else {
+    if (!pushResp.ok) {
       const err = await pushResp.json();
-      throw new Error(err.message || '推送失败');
+      console.warn('GitHub push failed:', err.message);
     }
   } catch(e) {
-    status.style.color = '#dc2626';
-    status.textContent = '❌ 发布失败：' + e.message;
-    btn.disabled = false; btn.textContent = '💾 保存并发布';
+    console.warn('GitHub sync failed:', e.message);
   }
 }
 </script>
