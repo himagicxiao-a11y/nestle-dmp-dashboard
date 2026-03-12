@@ -983,8 +983,8 @@ async function saveAndDeploy() {
 
   try {
     // 获取当前文件 SHA
-    const metaResp = await fetch(\`https://api.github.com/repos/\${GH_REPO}/contents/\${GH_FILE}\`, {
-      headers: { Authorization: \`token \${GH_TOKEN}\`, Accept: 'application/vnd.github.v3+json' }
+    const metaResp = await fetch(`https://api.github.com/repos/${GH_REPO}/contents/${GH_FILE}`, {
+      headers: { Authorization: `token ${GH_TOKEN}`, Accept: 'application/vnd.github.v3+json' }
     });
     const meta = await metaResp.json();
     const sha = meta.sha;
@@ -1001,16 +1001,16 @@ async function saveAndDeploy() {
 
     // 替换 KPI 显示值（精确替换 span 内容）
     currentHtml = currentHtml
-      .replace(/(id="kpi-total"[^>]*>)[\s\S]*?(<\/span>)/, (m, a, b) => \`\${a}\${total.toFixed(1)}万\${b}\`)
-      .replace(/(id="kpi-in"[^>]*>)[\s\S]*?(<\/span>)/, (m, a, b) => \`\${a}\${inVal.toFixed(1)}万\${b}\`)
-      .replace(/(id="kpi-out"[^>]*>)[\s\S]*?(<\/span>)/, (m, a, b) => \`\${a}\${outVal.toFixed(1)}万\${b}\`)
-      .replace(/(id="kpi-pending"[^>]*>)[\s\S]*?(<\/span>)/, (m, a, b) => \`\${a}\${pending.toFixed(1)}万\${b}\`);
+      .replace(/(id="kpi-total"[^>]*>)[\s\S]*?(<\/span>)/, (m, a, b) => `${a}${total.toFixed(1)}万${b}`)
+      .replace(/(id="kpi-in"[^>]*>)[\s\S]*?(<\/span>)/, (m, a, b) => `${a}${inVal.toFixed(1)}万${b}`)
+      .replace(/(id="kpi-out"[^>]*>)[\s\S]*?(<\/span>)/, (m, a, b) => `${a}${outVal.toFixed(1)}万${b}`)
+      .replace(/(id="kpi-pending"[^>]*>)[\s\S]*?(<\/span>)/, (m, a, b) => `${a}${pending.toFixed(1)}万${b}`);
 
     // 提交到 GitHub
     const content = btoa(unescape(encodeURIComponent(currentHtml)));
-    const pushResp = await fetch(\`https://api.github.com/repos/\${GH_REPO}/contents/\${GH_FILE}\`, {
+    const pushResp = await fetch(`https://api.github.com/repos/${GH_REPO}/contents/${GH_FILE}`, {
       method: 'PUT',
-      headers: { Authorization: \`token \${GH_TOKEN}\`, Accept: 'application/vnd.github.v3+json', 'Content-Type': 'application/json' },
+      headers: { Authorization: `token ${GH_TOKEN}`, Accept: 'application/vnd.github.v3+json', 'Content-Type': 'application/json' },
       body: JSON.stringify({ message: '📊 更新看板数据 via editor', content, sha })
     });
 
