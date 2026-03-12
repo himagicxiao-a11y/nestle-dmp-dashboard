@@ -723,6 +723,16 @@ function unlockApp() {
   document.getElementById('lock-screen').style.display = 'none';
   document.getElementById('main-content').style.display = 'block';
   if (userRole === 'editor') document.getElementById('edit-fab').style.display = 'flex';
+
+  // 从 localStorage 恢复最近一次编辑的数据
+  const saved = localStorage.getItem('dmp_dashboard_data');
+  if (saved) {
+    try {
+      const d = JSON.parse(saved);
+      applyEditorToDOM(d.total, d.inVal, d.outVal, d.pending, d.cutoff, d.rows);
+    } catch(e) { console.warn('localStorage 数据解析失败', e); }
+  }
+
   if (!chartsInited) { chartsInited = true; initCharts(); }
 }
 let chartsInited = false;
@@ -1037,6 +1047,10 @@ async function saveAndDeploy() {
 
   // ① 立刻更新本地 DOM（用户立刻看到变化）
   applyEditorToDOM(total, inVal, outVal, pending, cutoff, rows);
+
+  // 持久化到 localStorage（刷新/重新登录后仍生效）
+  localStorage.setItem('dmp_dashboard_data', JSON.stringify({total, inVal, outVal, pending, cutoff, rows}));
+
   closeEditor();
   status.textContent = '';
 
